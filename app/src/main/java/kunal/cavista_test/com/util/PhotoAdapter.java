@@ -1,6 +1,7 @@
 package kunal.cavista_test.com.util;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import kunal.cavista_test.com.ImageViewActivity;
 import kunal.cavista_test.com.R;
 
 public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.PhotoViewHolder> {
@@ -31,6 +33,7 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.PhotoViewHol
 
         PhotoViewHolder vh = new PhotoViewHolder(LayoutInflater.from(mContext).inflate(R.layout.rv_item, null));
         vh.photo = vh.itemView.findViewById(R.id.photo);
+
         return vh;
     }
 
@@ -41,6 +44,15 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.PhotoViewHol
         Picasso.get()
                 .load(link)
                 .into(holder.photo);
+
+        holder.photo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent image = new Intent(mContext, ImageViewActivity.class);
+                image.putExtra("LINK", link);
+                mContext.startActivity(image);
+            }
+        });
 
     }
 

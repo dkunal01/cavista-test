@@ -1,4 +1,4 @@
-package kunal.cavista_test.com.adapter;
+package kunal.cavista_test.com.viewmodel;
 
 import android.content.Context;
 import android.view.LayoutInflater;

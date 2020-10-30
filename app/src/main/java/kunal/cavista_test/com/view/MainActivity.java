@@ -1,4 +1,4 @@
-package kunal.cavista_test.com;
+package kunal.cavista_test.com.view;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -19,11 +19,12 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import kunal.cavista_test.com.util.ApiClient;
-import kunal.cavista_test.com.util.ApiInterface;
-import kunal.cavista_test.com.util.DataResponse;
-import kunal.cavista_test.com.util.Images;
-import kunal.cavista_test.com.util.PhotoAdapter;
+import kunal.cavista_test.com.R;
+import kunal.cavista_test.com.model.ApiClient;
+import kunal.cavista_test.com.model.ApiInterface;
+import kunal.cavista_test.com.model.DataResponse;
+import kunal.cavista_test.com.model.Images;
+import kunal.cavista_test.com.viewmodel.PhotoAdapter;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

@@ -1,4 +1,4 @@
-package kunal.cavista_test.com.util;
+package kunal.cavista_test.com.model;
 
 import com.google.gson.annotations.SerializedName;
 

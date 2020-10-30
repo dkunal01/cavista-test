@@ -1,4 +1,4 @@
-package kunal.cavista_test.com.util;
+package kunal.cavista_test.com.model;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;

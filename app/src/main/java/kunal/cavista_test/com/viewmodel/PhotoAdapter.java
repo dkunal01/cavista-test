@@ -1,4 +1,4 @@
-package kunal.cavista_test.com.util;
+package kunal.cavista_test.com.viewmodel;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,8 +14,9 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-import kunal.cavista_test.com.ImageViewActivity;
 import kunal.cavista_test.com.R;
+import kunal.cavista_test.com.model.Images;
+import kunal.cavista_test.com.view.ImageViewActivity;
 
 public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.PhotoViewHolder> {
 

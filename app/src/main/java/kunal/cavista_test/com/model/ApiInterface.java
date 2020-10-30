@@ -1,4 +1,4 @@
-package kunal.cavista_test.com.util;
+package kunal.cavista_test.com.model;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

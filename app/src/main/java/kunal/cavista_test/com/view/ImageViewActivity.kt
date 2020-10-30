@@ -1,40 +1,23 @@
-package kunal.cavista_test.com
+package kunal.cavista_test.com.view
 
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import butterknife.BindView
-import butterknife.ButterKnife
 import com.squareup.picasso.Picasso
-import kunal.cavista_test.com.adapter.CommentListAdapter
+import kotlinx.android.synthetic.main.activity_image_view.*
+import kunal.cavista_test.com.R
 import kunal.cavista_test.com.database.DatabaseHelper
+import kunal.cavista_test.com.viewmodel.CommentListAdapter
+import kunal.cavista_test.com.viewmodel.DatabaseAccess
 
 class ImageViewActivity : AppCompatActivity() {
-
-    @BindView(R.id.mImage)
-    internal var mImage: ImageView? = null
-
-    @BindView(R.id.edtComment)
-    internal var edtComment: EditText? = null
-
-    @BindView(R.id.btnSubmit)
-    internal var btnSubmit: Button? = null
-
-    @BindView(R.id.rvCommentList)
-    internal var rvCommentList: RecyclerView? = null
 
     internal var link: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_image_view)
-
-        ButterKnife.bind(this)
 
         val layoutManager = LinearLayoutManager(this)
         rvCommentList!!.layoutManager = layoutManager
@@ -65,8 +48,8 @@ class ImageViewActivity : AppCompatActivity() {
     }
 
     fun loadComments(link: String?) {
-        val DH = DatabaseHelper(this@ImageViewActivity)
-        val list = DH.getAllComments(link)
+        val DA = DatabaseAccess(this@ImageViewActivity)
+        val list = DA.getCommentsFromDatabase(link)
 
         val adapter = CommentListAdapter(this@ImageViewActivity, list)
         rvCommentList!!.adapter = adapter

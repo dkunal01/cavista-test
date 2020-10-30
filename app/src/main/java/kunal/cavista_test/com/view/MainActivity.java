@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String item = edtSearch.getText().toString();
-                if (item != null) {
+                if (item.length() > 0) {
                     URL = "https://api.imgur.com/3/gallery/search/1?q=" + item;
                     getImages();
                 } else {
@@ -119,14 +119,13 @@ public class MainActivity extends AppCompatActivity {
                         isLoading = true;
                     }
                 }
-
             }
         });
-
 
     }
 
     public void getImages() {
+        imagesList.clear();
         progressBar.setVisibility(View.VISIBLE);
         apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
 

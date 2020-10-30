@@ -19,6 +19,7 @@ public class DatabaseAccess {
         DatabaseHelper DH = new DatabaseHelper(context);
 
         ListComments = DH.getAllComments(link);
+        DH.close();
 
         return ListComments;
     }

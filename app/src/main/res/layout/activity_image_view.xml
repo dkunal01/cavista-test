@@ -9,29 +9,24 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="10dp"
-            android:weightSum="10">
+            android:padding="10dp">
 
             <ImageView
                 android:id="@+id/mImage"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="5" />
+                android:layout_height="wrap_content" />
 
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="5">
-
-                <EditText
+            <EditText
                     android:id="@+id/edtComment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                android:layout_below="@+id/mImage"
+                android:layout_marginTop="10dp"
                     android:background="@drawable/edt_drawable"
                     android:ems="10"
                     android:gravity="start"
@@ -57,10 +52,7 @@
                     android:layout_marginTop="5dp" />
 
 
-            </RelativeLayout>
-
-
-        </LinearLayout>
+        </RelativeLayout>
 
 
     </ScrollView>
